@@ -1,10 +1,14 @@
-# James Bond
+# <img src="./logo/Favicon_BamesJond.svg" height="32" /> Bames Jond
 
-Hire James Bond to observe your (object) targets.
+The name's Jond, Bames Jond.
 
 ## Summary
 
-Use `james-bond` to observe changes to properties in objects.
+Hire Bames Jond to take action on your targets.
+
+Use `bames-jond` to react to changes of properties in objects.
+
+![](./logo/Logo-Full_BamesJond-Color.svg)
 
 ## Usage
 
@@ -13,12 +17,12 @@ Use `james-bond` to observe changes to properties in objects.
 Observe particular properties of an object (non-deeply).
 
 ```js
-import * as bond from 'james-bond'
+import * as bames from 'bames-jond'
 
-const janus = {
-	name: 'Alec Trevelyan',
+const janous = {
+	name: 'Alex Travelin',
 	stats: {
-		kills: 8,
+		kills: 6,
 	},
 	kill(someone) {
 		console.log('killed ' + someone)
@@ -30,25 +34,27 @@ const callback = (key, value) => {
 	console.log(key, value)
 }
 
-bond.observe(janus, ['name'], callback)
-bond.observe(janus.stats, ['kills'], callback)
+bames.observe(janous, ['name'], callback)
+bames.observe(janous.stats, ['kills'], callback)
 
 setTimeout(() => {
-	janus.name = 'Janus' // logs "name Janus"
-	janus.kill('someone') // logs "kills 9"
+	janous.name = 'Janous' // logs "name Janous"
+	janous.kill('soldier') // logs "kills 7"
 }, 1000)
 ```
 
-Later, unobserve when done:
+Later, unobserve when mission accomplished:
 
 ```js
 // Unobserve all props for the given callback (in this case, just "kills")
-bond.unobserve(janus.stats, callback)
+bames.unobserve(janous.stats, callback)
 // Alternatively, unobserve specific props for the given callback.
-bond.unobserve(janus, ['name'], callback)
+bames.unobserve(janous, ['name'], callback)
 ```
 
-## Roadmap
+## Next stop?
+
+Jond is always on the move.
 
 - Add deferral options, f.e. to have updates batched into a microtask or
   animation frame.
